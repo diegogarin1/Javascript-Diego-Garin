@@ -19,7 +19,7 @@ const comidas = {
     let cantidad;
     do {
       cantidad = parseInt(prompt(`¿Cuántas ${comida}s desea agregar a su pedido?`));
-    } while (isNaN(cantidad) || cantidad <= 0);
+    } while (cantidad <= 0);
     return cantidad;
   }
   
@@ -47,5 +47,6 @@ for (const [comida, cantidad] of Object.entries(orden)) {
   total += subtotal;
  alert(`${cantidad} ${comida}s - $${precio} c/u - subtotal: $${subtotal}`);
 }
+
 alert(`TOTAL: $${total}`);
 
