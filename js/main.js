@@ -1,52 +1,67 @@
-const comidas = {
-    "taco": 100,
-    "burrito": 150,
-    "nacho": 80,
-    "coca cola": 70
-  };
+class Comida {
+  constructor(id, nombre, precio) {
+    this.id = id
+    this.nombre = nombre
+    this.precio = precio
 
-  //Funciones
-
-  function pedirComida() {
-    let comida;
-    do {
-      comida = prompt("¿Qué producto desea agregar a su pedido? (taco, burrito, nacho, coca cola)");
-    } while (!comidas.hasOwnProperty(comida));
-    return comida;
   }
-  
-  function pedirCantidad(comida) {
-    let cantidad;
-    do {
-      cantidad = parseInt(prompt(`¿Cuántas ${comida}s desea agregar a su pedido?`));
-    } while (cantidad <= 0);
-    return cantidad;
+};
+
+const taco = new Comida(1, 'Taco', 100)
+const burrito = new Comida(2, 'Burrito', 150)
+const nacho = new Comida(3, 'Nacho', 80)
+const coca = new Comida(4, 'Coca cola', 70)
+
+const comidas = [taco, burrito, nacho, coca]
+
+const orden = [];
+
+function pedirComida() {
+  let comidaEscogida;
+  comidaEscogida = prompt("¿Qué producto desea agregar a su pedido? (taco, burrito, nacho, coca cola)");
+  const comida = comidas.find((comida) => comida.nombre.toLowerCase().trim() === comidaEscogida.toLowerCase().trim())
+
+  if (comida) {
+    pedirCantidad(comida.nombre);
+  } else {
+    alert('Escoge un producto correcto: taco, burrito, nacho o coca cola');
+    pedirComida();
   }
-  
-  //Almacenar orden
-
-  const orden = {};
-
-  //Ejecutar orden
-
-  let continuarOrdenando = true;
-while (continuarOrdenando) {
-  const comida = pedirComida();
-  const cantidad = pedirCantidad(comida);
-  orden[comida] = (orden[comida]) + cantidad;
-  continuarOrdenando = confirm("¿Desea seguir ordenando?");
-  console.log(orden)
 }
 
-//Mostrar orden
+function pedirCantidad(comidaEscogida) {
+  let cantidadAñadida = parseInt(prompt(`¿Cuántas ${comidaEscogida}s desea agregar a su pedido?`));
+  const comida = comidas.find((comida) => comida.nombre.toLowerCase().trim() === comidaEscogida.toLowerCase().trim())
 
-let total = 0;
-for (const [comida, cantidad] of Object.entries(orden)) {
-  const precio = comidas[comida];
-  const subtotal = precio * cantidad;
-  total += subtotal;
- alert(`${cantidad} ${comida}s - $${precio} c/u - subtotal: $${subtotal}`);
+  if (cantidadAñadida >= 0) {
+    orden.push({ comida: comidaEscogida, cantidad: cantidadAñadida, precio: comida.precio });
+    seguirPidiendo();
+  } else {
+    alert('Ingrese cantidad correcta:');
+    pedirCantidad(comidaEscogida);
+  }
 }
 
-alert(`TOTAL: $${total}`);
+function seguirPidiendo() {
+  let seguir = prompt('¿Desea seguir pidiendo? (S/N)');
+  if (seguir.toLowerCase() === 's') {
+    pedirComida();
+  } else if (seguir.toLowerCase() === 'n') {
+    mostrarOrden();
+  } else {
+    alert('Ingrese una opción válida.');
+    seguirPidiendo();
+  }
+}
 
+function mostrarOrden() {
+  let precioTotal = 0;
+  alert(`Su orden es la siguiente:`);
+  orden.forEach((item) => {
+    alert(`${item.cantidad} ${item.comida}(s) a ${item.precio} cada una`);
+    precioTotal += item.precio * item.cantidad;
+  });
+  alert(`El precio total de su orden es: ${precioTotal}`);
+}
+
+pedirComida();
