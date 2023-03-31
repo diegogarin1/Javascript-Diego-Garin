@@ -2,10 +2,10 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: rgb(235, 131, 14);
+    background-color: rgb(235, 131, 14) !important;
     display: grid;
     grid-template-columns: 1fr 3fr;
-    grid-template-rows: 1fr 3fr;
+    grid-template-rows: 1fr 2fr;
     grid-template-areas: 
     "A A"
     "B C";
@@ -19,6 +19,7 @@ header {
     justify-content: space-between;
     align-items: end;
     grid-area: A;
+    margin: 2em;
 }
 
 aside {
@@ -26,24 +27,47 @@ aside {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    justify-content: space-between;
+    justify-content: space-around;
+    background-color:rgb(235, 131, 14);
+    border-radius: 1.5em;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2); 
+
 }
 
 aside nav ul {
     list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
 }
 
 #container-comidas {
     grid-area: C;
     display: flex;
+    padding: 1em;
 }
 
-#card-comida {
+h2 {
+    display: inline;
+    padding: 3em;
+    text-decoration: underline ;
+}
+.card-comida {
     display: flex;
     flex-direction: column;
     padding: 2rem;
+    background-color:rgb(235, 131, 14);
+    border-radius: 1.5em;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2); 
+}
 
-
+.card-bebida {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    background-color:rgb(235, 131, 14);
+    border-radius: 1.5em;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2); 
 }
 
 #imagen-comida {
@@ -51,3 +75,25 @@ aside nav ul {
 }
 
 
+.boton-agregar {
+    background-color: rgb(209, 205, 200);
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 0.5em;
+}
+
+.botones-nav {
+    background-color: rgb(209, 205, 200);
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 0.5em;
+}
+
+#nav-pedido {
+margin-left: 2em;
+margin-top: 4em;
+
+}
+
+footer {
+    display: flex;
+    padding: 0;
+}
