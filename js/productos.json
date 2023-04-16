@@ -1,0 +1,63 @@
+[
+    {
+        "id": "comida1",
+        "nombre": "Taco Asada",
+        "precio":100,
+        "stock":10,
+        "img":"./images/623Beef.jpg",
+        "descripcion":"Tacos de carne asada con salsa",
+        "tipo":"comida",
+        "todos":"todos" 
+    },
+
+{
+        "id": "comida2",
+        "nombre": "Burrito",
+        "precio":150,
+        "stock":10,
+        "img":"./images/Burrito_V.jpg",
+        "descripcion":"Burrito de carne asada",
+        "tipo":"comida",
+        "todos":"todos" 
+    },
+{
+        "id": "comida3",
+        "nombre": "Nacho",
+        "precio":80,
+        "stock":10,
+        "img":"./images/Chips.jpg",
+        "descripcion":"Chips de maiz con salsa",
+        "tipo":"comida",
+        "todos":"todos"
+    },
+{
+        "id": "comida4",
+        "nombre": "Taco Pastor",
+        "precio":70,
+        "stock":10,
+        "img":"./images/big.jpg",
+        "descripcion":"Tacos al pastor con salsa",
+        "tipo":"comida",
+        "todos":"todos"
+    },
+{
+        "id": "bebida1",
+        "nombre": "Coca Cola",
+        "precio":40,
+        "stock":10,
+        "img":"./images/cocacola.jpeg",
+        "descripcion":"Coca-Cola 500ml",
+        "tipo":"bebida",
+        "todos":"todos"
+     },
+{
+        "id": "bebida2",
+        "nombre": "Cerveza Pacifico",
+       "precio": 50,
+        "stock":10,
+        "img":"./images/pacifico.jpg",
+        "descripcion":"Cerveza Pacifico 330ml",
+        "tipo":"bebida",
+        "todos":"todos"
+     }
+]

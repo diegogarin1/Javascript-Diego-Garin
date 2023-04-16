@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
 </head>
@@ -27,8 +28,8 @@
                     </ul>
                 </li>
                 <li>
-                    <button class="botones-nav" id="nav-pedido">Ver Pedido</button>
-                    <button class="botones-nav" id="nav-vacpedido">Vaciar Pedido</button>
+                    <button class="botones-nav" id="nav-pedido"></button>
+                    
                 </li>
             </ul>
         </nav>
@@ -44,7 +45,7 @@
 
         </div>
         <div id="container-orden">
-            <table class="table tabla-pedido">
+            <table id="tabla-pedido" class="table tabla-pedido">
                 <thead>
                     <tr>
                         <th scope="col">Producto seleccionado</th>
@@ -55,10 +56,14 @@
                 <tbody id="tbody"></tbody>
             </table>
             <p id="parrafo-orden"></p>
+            <button class="botones-nav" id="finalizar-compra">Finalizar Compra</button>
+            <button class="botones-nav" id="nav-vacpedido">Vaciar Pedido</button>
         </div>
         </div>
+        <p id="parrafo-vacio"></p>
     </main>
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="./js/main.js"></script>
 </body>
 
